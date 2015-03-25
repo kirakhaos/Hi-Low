@@ -14,7 +14,7 @@
     <input type=submit value='LOWER'></center></strong></form>? <br />";
   }
   if($card == $oc){
-	echo "$image1 <br /> $image <br /> Draw! 
+	echo "Old <br /> $image1 <br /> New <br /> $image <br /> Draw! 
     <br /><br /> 
     <form method='POST'> 
     <input type='hidden' name='pick' value='high'> 
@@ -27,7 +27,7 @@
     <input type=submit value='LOWER'></form>";
   }
   if("$choice" == "high" && "$card" > "$oc") {
-    echo "$image1 <br /> $image <br /> You Win! 
+    echo "Old <br /> $image1 <br /> New <br /> $image <br /> You Win! 
     <br /><br /> 
     <form method='POST'> 
     <input type='hidden' name='pick' value='high'> 
@@ -41,7 +41,7 @@
   }
   if("$choice" == "high" && "$card" < "$oc") 
 { 
-echo "$image1 <br /> $image <br /> You Lose! 
+echo "Old <br /> $image1 <br /> New <br /> $image <br /> You Lose! 
 <br /><br /> 
 <form method='POST'> 
 <input type='hidden' name='pick' value='high'> 
@@ -57,7 +57,7 @@ or
 //if user selected low and new card is higher than old card 
 if("$choice" == "low" && "$card" > "$oc") 
 { 
-echo "$image1 <br /> $image <br /> You Lose! 
+echo "Old <br /> $image1 <br /> New <br /> $image <br /> You Lose! 
 <br /><br /> 
 <form method='POST'> 
 <input type='hidden' name='pick' value='high'> 
