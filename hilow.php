@@ -5,13 +5,26 @@
   $image1 = "<img src='cards/".$oc.".gif' alt='' height='100px' width='75px' />";
   $choice = $_POST['pick'];
   if(empty($oc)) {
-    echo "".$image." <br /> Will the next card be <form method='POST' action='$PHP_SELF'> 
+    echo "".$image." <br /> Will the next card be <form method='POST'> 
     <input type='hidden' name='pick' value='high'> 
     <input type='hidden' name='card' value='$card'> 
-    <input type=submit value='HIGHER'></form> or <form method='POST' action='$PHP_SELF'> 
+    <input type=submit value='HIGHER'></form> or <form method='POST'> 
     <input type='hidden' name='pick' value='low'> 
     <input type='hidden' name='card' value='$card'> 
     <input type=submit value='LOWER'></center></strong></form>? <br />";
+  }
+  if($card == $oc){
+	echo "$image1 <br /> $image <br /> Draw! 
+    <br /><br /> 
+    <form method='POST'> 
+    <input type='hidden' name='pick' value='high'> 
+    <input type='hidden' name='card' value='$card'> 
+    <input type=submit value='HIGHER'></form> 
+    or 
+    <form method='POST'> 
+    <input type='hidden' name='pick' value='low'> 
+    <input type='hidden' name='card' value='$card'> 
+    <input type=submit value='LOWER'></form>";
   }
   if("$choice" == "high" && "$card" > "$oc") {
     echo "$image1 <br /> $image <br /> You Win! 
@@ -21,7 +34,7 @@
     <input type='hidden' name='card' value='$card'> 
     <input type=submit value='HIGHER'></form> 
     or 
-    <form method='POST' action='$PHP_SELF'> 
+    <form method='POST'> 
     <input type='hidden' name='pick' value='low'> 
     <input type='hidden' name='card' value='$card'> 
     <input type=submit value='LOWER'></form>"; 
@@ -30,12 +43,12 @@
 { 
 echo "$image1 <br /> $image <br /> You Lose! 
 <br /><br /> 
-<form method='POST' action='$PHP_SELF'> 
+<form method='POST'> 
 <input type='hidden' name='pick' value='high'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='HIGHER'></form> 
-
-<form method='POST' action='$PHP_SELF'> 
+or 
+<form method='POST'> 
 <input type='hidden' name='pick' value='low'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='LOWER'></form>"; 
@@ -46,12 +59,12 @@ if("$choice" == "low" && "$card" > "$oc")
 { 
 echo "$image1 <br /> $image <br /> You Lose! 
 <br /><br /> 
-<form method='POST' action='$PHP_SELF'> 
+<form method='POST'> 
 <input type='hidden' name='pick' value='high'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='HIGHER'></form> 
-
-<form method='POST' action='$PHP_SELF'> 
+or 
+<form method='POST'> 
 <input type='hidden' name='pick' value='low'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='LOWER'></form>"; 
@@ -61,12 +74,12 @@ echo "$image1 <br /> $image <br /> You Lose!
 if("$choice" == "low" && "$card" < "$oc") 
 { 
 echo "$image1 <br/> $image <br /> You Win!<br /><br /> 
-<form method='POST' action='$PHP_SELF'> 
+<form method='POST'> 
 <input type='hidden' name='pick' value='high'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='HIGHER'></form> 
-
-<form method='POST' action='$PHP_SELF'> 
+or 
+<form method='POST'> 
 <input type='hidden' name='pick' value='low'> 
 <input type='hidden' name='card' value='$card'> 
 <input type=submit value='LOWER'></form>"; 
